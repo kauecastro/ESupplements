@@ -7,8 +7,8 @@ using Supplements.Models;
 
 namespace Supplements.Strategy
 {
-    interface IStrategy
+    public interface IStrategy
     {
-        public ModelResponse Process(ModelDomain modelDomain);
+         ModelResponse Process(ModelDomain modelDomain);
     }
 }

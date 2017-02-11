@@ -9,6 +9,6 @@ namespace Supplements.Models
     {
         public int id { get; set; }
         public string name { get; set; }
-        public List<Categoy> Category { get; set; }
+        public List<Category> Category { get; set; }
     }
 }

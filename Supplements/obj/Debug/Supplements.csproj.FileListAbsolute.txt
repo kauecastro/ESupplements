@@ -1,0 +1,17 @@
+D:\Projects\ESupplements\Supplements\bin\Supplements.dll.config
+D:\Projects\ESupplements\Supplements\bin\Supplements.dll
+D:\Projects\ESupplements\Supplements\bin\Supplements.pdb
+D:\Projects\ESupplements\Supplements\bin\System.Web.Helpers.dll
+D:\Projects\ESupplements\Supplements\bin\System.Web.Mvc.dll
+D:\Projects\ESupplements\Supplements\bin\System.Web.Razor.dll
+D:\Projects\ESupplements\Supplements\bin\System.Web.Webpages.Deployment.dll
+D:\Projects\ESupplements\Supplements\bin\System.Web.Webpages.dll
+D:\Projects\ESupplements\Supplements\bin\System.Web.Webpages.Razor.dll
+D:\Projects\ESupplements\Supplements\bin\System.Web.Razor.xml
+D:\Projects\ESupplements\Supplements\bin\System.Web.Webpages.xml
+D:\Projects\ESupplements\Supplements\bin\System.Web.Webpages.Deployment.xml
+D:\Projects\ESupplements\Supplements\bin\System.Web.Webpages.Razor.xml
+D:\Projects\ESupplements\Supplements\bin\System.Web.Helpers.xml
+D:\Projects\ESupplements\Supplements\bin\System.Web.Mvc.xml
+D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.dll
+D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.pdb

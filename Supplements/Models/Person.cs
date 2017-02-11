@@ -11,5 +11,6 @@ namespace Supplements.Models
         public string nome { get; set; }
         public string CPF { get; set; }
         public Address address { get; set; }
+        public UserAccount userAccount { get; set; }
     }
 }

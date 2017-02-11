@@ -9,6 +9,6 @@ namespace Supplements.Models
     {
         public ModelDomain Domain { get; set; }
         public string text { get; set; }
-        public string logical { get; set; }
+        public Boolean logical { get; set; }
     }
 }
