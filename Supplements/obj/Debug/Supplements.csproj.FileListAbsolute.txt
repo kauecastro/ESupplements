@@ -15,3 +15,4 @@ D:\Projects\ESupplements\Supplements\bin\System.Web.Helpers.xml
 D:\Projects\ESupplements\Supplements\bin\System.Web.Mvc.xml
 D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.dll
 D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.pdb
+D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.csprojResolveAssemblyReference.cache
