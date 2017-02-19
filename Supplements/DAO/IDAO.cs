@@ -7,7 +7,7 @@ using Supplements.Models;
 
 namespace Supplements.DAO
 {
-    public interface IDAO
+    public interface IDAO 
     {
         ModelResponse Create(ModelDomain ModelDomain);
         ModelResponse Read(ModelDomain ModelDomain);

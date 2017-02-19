@@ -11,9 +11,10 @@ namespace Supplements.Models
         public string name { get; set; }
         public string sku { get; set; }
         public string ean { get; set; }
-        public int quantityinstock { get; set; }
-        public bool active { get; set; }
-        public double oldPrice { get; set; }
-        public double price { get; set; }
+        public string quantityStock { get; set; }
+        public string active { get; set; }
+        public string oldPrice { get; set; }
+        public string price { get; set; }
+        //public List<Category> category { get; set; }
     }
 }

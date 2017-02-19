@@ -16,3 +16,13 @@ D:\Projects\ESupplements\Supplements\bin\System.Web.Mvc.xml
 D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.dll
 D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.pdb
 D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.csprojResolveAssemblyReference.cache
+D:\Projects\ESupplements\Supplements\bin\MongoDB.Bson.dll
+D:\Projects\ESupplements\Supplements\bin\MongoDB.Driver.Core.dll
+D:\Projects\ESupplements\Supplements\bin\MongoDB.Driver.dll
+D:\Projects\ESupplements\Supplements\bin\MongoDB.Driver.Legacy.dll
+D:\Projects\ESupplements\Supplements\bin\MySql.Data.dll
+D:\Projects\ESupplements\Supplements\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Projects\ESupplements\Supplements\bin\MongoDB.Bson.xml
+D:\Projects\ESupplements\Supplements\bin\MongoDB.Driver.xml
+D:\Projects\ESupplements\Supplements\bin\MongoDB.Driver.Core.xml
+D:\Projects\ESupplements\Supplements\bin\MongoDB.Driver.Legacy.xml
