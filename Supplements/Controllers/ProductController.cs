@@ -13,6 +13,7 @@ namespace Supplements.Controllers
         // GET: /Product/
         public ActionResult Index()
         {
+            
             Facade.Facade facade = new Facade.Facade();
             ModelResponse modelReponse = facade.Read(new Product());
             return View(modelReponse.Domain);
@@ -44,6 +45,14 @@ namespace Supplements.Controllers
             Facade.Facade facade = new Facade.Facade();
             ModelResponse modelReponse = facade.Update(product);
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            Facade.Facade facade = new Facade.Facade();
+            ModelResponse modelReponse = facade.Delete(new Product() { id = id });
+            return Json(modelReponse);
         }
     }
 }

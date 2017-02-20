@@ -5,6 +5,10 @@
 @foreach(Supplements.Models.Product product in Model)
 { 
     <form action="/product/Update" method="post">
+        
+        <label for="id">Id: </label>
+        <input id="id" name="product.id" class="form-control" value="@product.id" />
+
         <label for="name">Name: </label>
         <input id="name" name="product.name" class="form-control" value="@product.name" />
 
@@ -23,7 +27,22 @@
         <label for="price">Price: </label>
         <input id="price" name="product.price" class="form-control" value="@product.price" />
 
-        <input type="submit" value="Atualizar" />
+        <input type="submit" value="Atualizar" class="btn"/>
     </form>
+    <button type="button" class="btn" onclick="DeleteProduct(@product.id)" >Excluir</button>
 }
 </div>
+
+<script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    function DeleteProduct(id) {
+        var url = "@Url.Action("Delete", "Product")";
+        var params = { id: id };
+        $.post(url, params, function () {
+            console.log("Redirect");
+            var url = "@Url.Action("Index", "Product")";
+            window.location.href = url;
+            alert("Produto excluído com sucesso !");
+        });
+    };
+</script>

@@ -143,6 +143,7 @@
     <Compile Include="Models\Supplements.cs" />
     <Compile Include="Models\UserAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategy\DeleteProductsStrategy.cs" />
     <Compile Include="Strategy\IStrategy.cs" />
     <Compile Include="Strategy\CreateProducts.cs" />
     <Compile Include="Strategy\ReadProducts.cs" />

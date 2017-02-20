@@ -10,6 +10,7 @@ namespace Supplements.DAO
 {
     public class ProductsDAO : AbstractDAO, IDAO
     {
+        #region .: Products CRUD :. 
         public ModelResponse Create(ModelDomain ModelDomain)
         {
             Product product = new Product();
@@ -47,7 +48,7 @@ namespace Supplements.DAO
             return response;
         }
 
-        public Models.ModelResponse Read(Models.ModelDomain ModelDomain)
+        public ModelResponse Read(Models.ModelDomain ModelDomain)
         {
             Product product = new Product();
             if (ModelDomain == null)
@@ -96,14 +97,78 @@ namespace Supplements.DAO
             return response;
         }
 
-        public Models.ModelResponse Update(Models.ModelDomain ModelDomain)
+        public ModelResponse Update(Models.ModelDomain ModelDomain)
         {
-            throw new NotImplementedException();
+            Product product = new Product();
+            if (ModelDomain == null)
+                throw new Exception("Paramerer is null !");
+            product = (Product)ModelDomain;
+            string query = string.Empty;
+            ModelResponse response = new ModelResponse()
+            {
+                logical = false,
+                text = "Error !"
+            };
+            try
+            {
+                conn.Open();
+                query = "UPDATE Products SET name = '" + product.name + "', sku = '" + product.sku + 
+                    "', ean = '" + product.ean + "', quantityStock = " +product.quantityStock + 
+                    ", active = 1, oldPrice = " + product.oldPrice + ", price = " + product.price + 
+                    " WHERE id_products = " +product.id +"";
+                MySqlCommand command = new MySqlCommand(query, conn);
+                command.ExecuteNonQuery();
+                response.logical = true;
+                response.text = "OK !";
+            }
+            catch (MySqlException mysqlex)
+            {
+                response.text = mysqlex.ToString();
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.text = ex.ToString();
+                return response;
+            }
+            conn.Close();
+            return response;
         }
 
-        public Models.ModelResponse Delete(Models.ModelDomain ModelDomain)
+        public ModelResponse Delete(Models.ModelDomain ModelDomain)
         {
-            throw new NotImplementedException();
+            Product product = new Product();
+            if (ModelDomain == null)
+                throw new Exception("Paramerer is null !");
+            product = (Product)ModelDomain;
+            string query = string.Empty;
+            ModelResponse response = new ModelResponse()
+            {
+                logical = false,
+                text = "Error !"
+            };
+            try
+            {
+                conn.Open();
+                query = "DELETE FROM Products WHERE id_products = " + product.id + "";
+                MySqlCommand command = new MySqlCommand(query, conn);
+                command.ExecuteNonQuery();
+                response.logical = true;
+                response.text = "OK !";
+            }
+            catch (MySqlException mysqlex)
+            {
+                response.text = mysqlex.ToString();
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.text = ex.ToString();
+                return response;
+            }
+            conn.Close();
+            return response;
         }
+        #endregion
     }
 }

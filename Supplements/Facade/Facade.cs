@@ -13,6 +13,7 @@ namespace Supplements.Facade
 
         public Facade()
         {
+            #region .: Strategy constructors :.
             List<IStrategy> Strategies = new List<IStrategy>();
             Strategies.Add(new ValidateProductsFieldsStrategy());
             Strategies.Add(new CreateProducts());
@@ -23,6 +24,10 @@ namespace Supplements.Facade
             Strategies = new List<IStrategy>();
             Strategies.Add(new UpdateProductsStrategy());
             StrategyDictionary.Add(new Product().GetType().Name.ToString() + "Update", Strategies);
+            Strategies = new List<IStrategy>();
+            Strategies.Add(new DeleteProductsStrategy());
+            StrategyDictionary.Add(new Product().GetType().Name.ToString() + "Delete", Strategies);
+            #endregion
         }
 
         public ModelResponse Create(ModelDomain domain)
@@ -59,12 +64,18 @@ namespace Supplements.Facade
                     return ModelResponse;
             }
             return ModelResponse;
-
         }
 
-        public ModelResponse delete(ModelDomain domain)
+        public ModelResponse Delete(ModelDomain domain)
         {
-            return new ModelResponse();
+            ModelResponse ModelResponse = new ModelResponse();
+            foreach (var strategy in StrategyDictionary[domain.GetType().Name.ToString() + "Delete"])
+            {
+                ModelResponse = strategy.Process(domain);
+                if (ModelResponse.logical == false)
+                    return ModelResponse;
+            }
+            return ModelResponse;
         }
     }
 }
