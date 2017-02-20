@@ -26,10 +26,11 @@
 
         <label for="price">Price: </label>
         <input id="price" name="product.price" class="form-control" value="@product.price" />
-
-        <input type="submit" value="Atualizar" class="btn"/>
+        <br />
+        <input type="submit" value="Atualizar" class="btn form-group" />
+        <button type="button" class="btn form-group" onclick="DeleteProduct(@product.id)">Excluir</button>
     </form>
-    <button type="button" class="btn" onclick="DeleteProduct(@product.id)" >Excluir</button>
+
 }
 </div>
 

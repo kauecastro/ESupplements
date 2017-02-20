@@ -19,4 +19,14 @@
              }
          </tbody>
      </table>
+<button type="button" class="btn" onclick="RedirectToForm()">Cadastrar</button>
+
+<script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    function RedirectToForm() {
+            console.log("Redirect");
+            var url = "@Url.Action("Form", "Product")";
+            window.location.href = url;
+    };
+</script>
 
