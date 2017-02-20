@@ -1,24 +1,26 @@
-﻿    <div> 
-        <form action="/product/Create" class="form-control" method="post">
+﻿    <h1 class="text-muted">Cadasto de produtos</h1>
+
+        <form action="/product/Create" method="post">
+            
             <label for="name">Name: </label>
-            <input id="name" name="product.name" />
+            <input id="name" name="product.name" class="form-control" />
 
             <label for="sku">SKU: </label>
-            <input id="sku" name="product.sku" />
+            <input id="sku" name="product.sku" class="form-control" />
 
             <label for="ean">EAN: </label>
-            <input id="ean" name="product.ean" />
+            <input id="ean" name="product.ean" class="form-control" />
 
             <label for="quantityStock">Quantity in stock: </label>
-            <input id="quantityStock" name="product.quantityStock" />
+            <input id="quantityStock" name="product.quantityStock" class="form-control" />
 
             <label for="odlPrice">Old Price: </label>
-            <input id="odlPrice" name="product.odlPrice" />
+            <input id="odlPrice" name="product.odlPrice" class="form-control" />
 
             <label for="price">Price: </label>
-            <input id="price" name="product.price" />
+            <input id="price" name="product.price" class="form-control" />
 
             <input type="submit" value="Create" />
         </form>
-    </div>
+
 

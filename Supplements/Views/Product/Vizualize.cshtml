@@ -1,0 +1,29 @@
+﻿@model List<Supplements.Models.ModelDomain>
+
+<h1 class="text-muted">Dados detalhados</h1>
+<div>
+@foreach(Supplements.Models.Product product in Model)
+{ 
+    <form action="/product/Update" method="post">
+        <label for="name">Name: </label>
+        <input id="name" name="product.name" class="form-control" value="@product.name" />
+
+        <label for="sku">SKU: </label>
+        <input id="sku" name="product.sku" class="form-control" value="@product.sku"/>
+
+        <label for="ean">EAN: </label>
+        <input id="ean" name="product.ean" class="form-control" value="@product.ean" />
+
+        <label for="quantityStock">Quantity in stock: </label>
+        <input id="quantityStock" name="product.quantityStock" class="form-control" value="@product.quantityStock" />
+
+        <label for="odlPrice">Old Price: </label>
+        <input id="odlPrice" name="product.odlPrice" class="form-control" value="@product.oldPrice" />
+
+        <label for="price">Price: </label>
+        <input id="price" name="product.price" class="form-control" value="@product.price" />
+
+        <input type="submit" value="Atualizar" />
+    </form>
+}
+</div>

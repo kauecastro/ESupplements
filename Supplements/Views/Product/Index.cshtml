@@ -1,0 +1,22 @@
+﻿@model List<Supplements.Models.ModelDomain>
+    <h1 class="text-muted center-block">Relatório de produtos</h1>
+     <table class="table table-hover">
+         <thead>
+             <tr>
+                 <th>SKU</th>
+                 <th>Produto</th>
+                 <th>Quantidade em estoque</th>
+             </tr>
+         </thead>
+         <tbody>
+             @foreach(Supplements.Models.Product product in Model)
+             {
+                 <tr>
+                     <td>@product.sku</td>
+                     <td>@Html.ActionLink(@product.name, "Vizualize", new { id = product.id })</td>
+                     <td>@product.quantityStock</td>
+                 </tr>                
+             }
+         </tbody>
+     </table>
+

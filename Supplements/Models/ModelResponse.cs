@@ -7,7 +7,7 @@ namespace Supplements.Models
 {
     public class ModelResponse : Supplements
     {
-        public ModelDomain Domain { get; set; }
+        public List<ModelDomain> Domain { get; set; }
         public string text { get; set; }
         public Boolean logical { get; set; }
     }
