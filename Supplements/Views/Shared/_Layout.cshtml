@@ -5,7 +5,15 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="~/Content/Css/bootstrap.css" />
+
         <link href="~/Content/Css/app.css" rel="stylesheet" />
+        <!--fonts-->
+        <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'><!--//fonts-->
+        <!--Scripts-->
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script src="~/Scripts/js/bootstrap.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
         <title>Home</title>
     </head>
     <body>
@@ -35,8 +43,10 @@
 
         <section class="container">@RenderBody()</section>    
         
-        <footer></footer>
-        <script src="~/Scripts/jquery-1.10.2.js"></script>
-        <script src="~/Scripts/js/bootstrap.js"></script>
+        <footer class="footer">
+            <div class="footer-class">
+                <p>© 2017 CASTROTecnologia . All Rights Reserved  </p>
+            </div>
+        </footer>        
     </body>
 </html>

@@ -103,6 +103,37 @@
   <ItemGroup>
     <Content Include="Content\Css\app.css" />
     <Content Include="Content\Css\bootstrap.css" />
+    <Content Include="Content\Css\flexslider.css" />
+    <Content Include="Content\Images\1.jpg" />
+    <Content Include="Content\Images\cart-1.png" />
+    <Content Include="Content\Images\cart.png" />
+    <Content Include="Content\Images\close_1.png" />
+    <Content Include="Content\Images\examplewhey.jpg" />
+    <Content Include="Content\Images\img-sprite.png" />
+    <Content Include="Content\Images\l1.jpg" />
+    <Content Include="Content\Images\l2.jpg" />
+    <Content Include="Content\Images\l3.jpg" />
+    <Content Include="Content\Images\pi.jpg" />
+    <Content Include="Content\Images\pi1.jpg" />
+    <Content Include="Content\Images\pi2.jpg" />
+    <Content Include="Content\Images\pi3.jpg" />
+    <Content Include="Content\Images\pi4.jpg" />
+    <Content Include="Content\Images\pi5.jpg" />
+    <Content Include="Content\Images\pic1.jpg" />
+    <Content Include="Content\Images\pic2.jpg" />
+    <Content Include="Content\Images\s1.jpg" />
+    <Content Include="Content\Images\search.png" />
+    <Content Include="Content\Images\si.jpg" />
+    <Content Include="Content\Images\si1.jpg" />
+    <Content Include="Content\Images\si2.jpg" />
+    <Content Include="Content\Images\si3.jpg" />
+    <Content Include="Content\Images\social.png" />
+    <Content Include="Content\Images\t1.jpg" />
+    <Content Include="Content\Images\t2.jpg" />
+    <Content Include="Content\Images\t3.jpg" />
+    <Content Include="Content\Images\t4.jpg" />
+    <Content Include="Content\Images\tick1.png" />
+    <Content Include="Content\Images\topwhey.jpg" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -114,6 +145,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\js\bootstrap.js" />
     <Content Include="Scripts\js\bootstrap.min.js" />
+    <Content Include="Scripts\js\imagezoom.js" />
+    <Content Include="Scripts\js\jquery.flexslider.js" />
     <Content Include="Scripts\js\npm.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -123,6 +156,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ShowcaseController.cs" />
+    <Compile Include="Controllers\SingleProductController.cs" />
     <Compile Include="DAO\AbstractDAO.cs" />
     <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DAO\ProductsDAO.cs" />
@@ -162,6 +196,7 @@
     <Content Include="Views\Product\Form.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Vizualize.cshtml" />
+    <Content Include="Views\SingleProduct\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
