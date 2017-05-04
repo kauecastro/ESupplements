@@ -13,160 +13,111 @@ namespace Supplements.DAO
         #region .: Products CRUD :. 
         public ModelResponse Create(ModelDomain ModelDomain)
         {
-            Product product = new Product();
-            if (ModelDomain == null)
-                throw new Exception("Paramerer is null !");
-            product = (Product)ModelDomain;
-            string query = string.Empty;
-            ModelResponse response = new ModelResponse()
-            {
-                logical = false,
-                text = "Error !"
-            };
+            ModelResponse response = new ModelResponse();
+            Product product = (Product)ModelDomain;
             try
             {
-                conn.Open();
-                query = "INSERT INTO Products(name, sku, ean, quantityStock, active, oldPrice, price)" +
-                    " VALUES('" + product.name + "', '" + product.sku + "', '" + product.ean + "', " +
-                    product.quantityStock+", 1, "+product.oldPrice+", "+product.price+")";
-                MySqlCommand command = new MySqlCommand(query, conn);
-                command.ExecuteNonQuery();
+                using(var context = new EntityContext())
+                {
+                    context.Products.Add(product);
+                    context.SaveChanges();
+                }
                 response.logical = true;
                 response.text = "OK !";
-            }
-            catch (MySqlException mysqlex)
-            {
-                response.text = mysqlex.ToString();
-                return response;
             }
             catch (Exception ex)
             {
                 response.text = ex.ToString();
                 return response;
             }
-            conn.Close();
             return response;
         }
 
         public ModelResponse Read(Models.ModelDomain ModelDomain)
         {
-            Product product = new Product();
-            if (ModelDomain == null)
-                throw new Exception("Paramerer is null !");
-            product = (Product)ModelDomain;
-            ModelResponse response = new ModelResponse()
-            {
-                logical = false,
-                text = "Error !",
-                Domain = new List<ModelDomain>()
-            };
-            StringBuilder query = new StringBuilder("SELECT * FROM Products ");
-            if (product.id > 0)
-                query.Append("WHERE id_products = " + product.id);
+            Product product = (Product)ModelDomain;
+            ModelResponse response = new ModelResponse() { Domain = new List<ModelDomain>() };    
             try
             {
-                conn.Open();
-                MySqlCommand command = new MySqlCommand(query.ToString(), conn);
-                MySqlDataReader dataReader = command.ExecuteReader();
-                while(dataReader.Read())
-                {
-                    response.Domain.Add(new Product()
+
+                var products = from p in context.Products select p;
+                    if (product.Id > 0)
+                        products = products.Where(q => q.Id == product.Id);
+                    foreach(var p in products)
                     {
-                        id = Convert.ToInt32(dataReader["id_products"]),
-                        name = dataReader["name"].ToString(),
-                        sku = dataReader["sku"].ToString(),
-                        ean = dataReader["ean"].ToString(),
-                        quantityStock = (int)dataReader["quantityStock"],
-                        active = (float)dataReader["active"],
-                        oldPrice = (decimal)dataReader["oldPrice"],
-                        price = (decimal)dataReader["price"]
-                    });
-                }
-            }
-            catch (MySqlException mysqlex)
-            {
-                response.text = mysqlex.ToString();
-                return response;
+                        response.Domain.Add(new Product()
+                        {
+                            Id = p.Id,
+                            Name = p.Name,
+                            EAN = p.EAN,
+                            Active = p.Active,
+                            OldPrice = p.OldPrice,
+                            Price = p.Price,
+                            QuantityStock = p.QuantityStock,
+                            SKU = p.SKU,
+                        });
+                    }
+                
+                response.text = "OK!";
+                response.logical = true;
             }
             catch (Exception ex)
             {
                 response.text = ex.ToString();
                 return response;
             }
-            conn.Close();
             return response;
         }
 
         public ModelResponse Update(Models.ModelDomain ModelDomain)
         {
-            Product product = new Product();
-            if (ModelDomain == null)
-                throw new Exception("Paramerer is null !");
-            product = (Product)ModelDomain;
-            string query = string.Empty;
-            ModelResponse response = new ModelResponse()
-            {
-                logical = false,
-                text = "Error !"
-            };
+            ModelResponse response = new ModelResponse();
+            Product product = (Product)ModelDomain;
             try
             {
-                conn.Open();
-                query = "UPDATE Products SET name = '" + product.name + "', sku = '" + product.sku + 
-                    "', ean = '" + product.ean + "', quantityStock = " +product.quantityStock + 
-                    ", active = 1, oldPrice = " + product.oldPrice + ", price = " + product.price + 
-                    " WHERE id_products = " +product.id +"";
-                MySqlCommand command = new MySqlCommand(query, conn);
-                command.ExecuteNonQuery();
+                using(var context = new EntityContext())
+                {
+                    var p = context.Products.FirstOrDefault(q => q.Id == product.Id);
+                    p.Name = product.Name;
+                    p.EAN = product.EAN;
+                    p.Active = product.Active;
+                    p.OldPrice = product.OldPrice;
+                    p.Price = product.Price;
+                    p.QuantityStock = product.QuantityStock;
+                    p.SKU = product.SKU;
+                    context.SaveChanges();
+                }                
+                response.text = "OK!";
                 response.logical = true;
-                response.text = "OK !";
-            }
-            catch (MySqlException mysqlex)
-            {
-                response.text = mysqlex.ToString();
-                return response;
             }
             catch (Exception ex)
             {
                 response.text = ex.ToString();
                 return response;
             }
-            conn.Close();
             return response;
         }
 
         public ModelResponse Delete(Models.ModelDomain ModelDomain)
         {
-            Product product = new Product();
-            if (ModelDomain == null)
-                throw new Exception("Paramerer is null !");
-            product = (Product)ModelDomain;
-            string query = string.Empty;
-            ModelResponse response = new ModelResponse()
-            {
-                logical = false,
-                text = "Error !"
-            };
+            Product product = (Product)ModelDomain;
+            ModelResponse response = new ModelResponse();
             try
             {
-                conn.Open();
-                query = "DELETE FROM Products WHERE id_products = " + product.id + "";
-                MySqlCommand command = new MySqlCommand(query, conn);
-                command.ExecuteNonQuery();
+                using(var context = new EntityContext())
+                {
+                    var p = context.Products.FirstOrDefault(q => q.Id == product.Id);
+                    context.Products.Remove(p);
+                    context.SaveChanges();
+                }
                 response.logical = true;
                 response.text = "OK !";
-            }
-            catch (MySqlException mysqlex)
-            {
-                response.text = mysqlex.ToString();
-                return response;
             }
             catch (Exception ex)
             {
                 response.text = ex.ToString();
                 return response;
             }
-            conn.Close();
             return response;
         }
         #endregion

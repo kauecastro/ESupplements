@@ -6,29 +6,29 @@
 { 
     <form action="/product/Update" method="post">
         
-        <label for="id">Id: </label>
-        <input id="id" name="product.id" class="form-control" value="@product.id" />
+        <label for="Id">Id: </label>
+        <input id="Id" name="product.id" class="form-control" value="@product.Id" />
 
-        <label for="name">Título: </label>
-        <input id="name" name="product.name" class="form-control" value="@product.name" />
+        <label for="Name">Título: </label>
+        <input id="Name" name="product.Name" class="form-control" value="@product.Name" />
 
         <label for="sku">SKU: </label>
-        <input id="sku" name="product.sku" class="form-control" value="@product.sku"/>
+        <input id="SKU" name="product.SKU" class="form-control" value="@product.SKU" />
 
-        <label for="ean">EAN: </label>
-        <input id="ean" name="product.ean" class="form-control" value="@product.ean" />
+        <label for="EAN">EAN: </label>
+        <input id="EAN" name="product.EAN" class="form-control" value="@product.EAN" />
 
-        <label for="quantityStock">Quantidade em estoque: </label>
-        <input id="quantityStock" name="product.quantityStock" class="form-control" value="@product.quantityStock" />
+        <label for="QuantityStock">Quantidade em estoque: </label>
+        <input id="QuantityStock" name="product.QuantityStock" class="form-control" value="@product.QuantityStock" />
 
-        <label for="odlPrice">Preço antigo: </label>
-        <input id="odlPrice" name="product.oldPrice" class="form-control" value="@product.oldPrice" />
+        <label for="OldPrice">Preço antigo: </label>
+        <input id="OldPrice" name="product.OldPrice" class="form-control" value="@product.OldPrice" />
 
-        <label for="price">Preço: </label>
-        <input id="price" name="product.price" class="form-control" value="@product.price" />
+        <label for="Price">Preço: </label>
+        <input id="Price" name="product.Price" class="form-control" value="@product.Price" />
         <br />
         <input type="submit" value="Atualizar" class="btn form-group" />
-        <button type="button" class="btn form-group" onclick="DeleteProduct(@product.id)">Excluir</button>
+        <button type="button" class="btn form-group" onclick="DeleteProduct(@product.Id)">Excluir</button>
     </form>
 
 }

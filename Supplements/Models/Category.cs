@@ -7,7 +7,8 @@ namespace Supplements.Models
 {
     public class Category
     {
-        public int id { get; set; }
-        public string name { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public List<Product> Products { get; set; }
     }
 }

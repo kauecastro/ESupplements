@@ -18,8 +18,8 @@ namespace Supplements.Strategy
             Product product = new Product();
             if (modelDomain != null)
                 product = (Product)modelDomain;
-            if (string.IsNullOrEmpty(product.name) ||
-                string.IsNullOrEmpty(product.sku))
+            if (string.IsNullOrEmpty(product.Name) ||
+                string.IsNullOrEmpty(product.SKU))
                 return ModelResponse;
 
             ModelResponse.logical = true;

@@ -7,14 +7,14 @@ namespace Supplements.Models
 {
     public class Product : ModelDomain
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string sku { get; set; }
-        public string ean { get; set; }
-        public int quantityStock { get; set; }
-        public float active { get; set; }
-        public decimal oldPrice { get; set; }
-        public decimal price { get; set; }
-        //public List<Category> category { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string SKU { get; set; }
+        public string EAN { get; set; }
+        public int QuantityStock { get; set; }
+        public float Active { get; set; }
+        public decimal OldPrice { get; set; }
+        public decimal Price { get; set; }
+        public Category Category { get; set; }
     }
 }

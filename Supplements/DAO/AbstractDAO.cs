@@ -10,5 +10,6 @@ namespace Supplements.DAO
     public abstract class AbstractDAO 
     {
         public MySqlConnection conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["MysqlConnection"].ConnectionString);
+        public EntityContext context = new EntityContext();
     }
 }

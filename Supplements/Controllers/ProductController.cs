@@ -35,7 +35,7 @@ namespace Supplements.Controllers
         public ActionResult Vizualize(int id)
         {
             Facade.Facade facade = new Facade.Facade();
-            ModelResponse modelReponse = facade.Read(new Product() {id = id});
+            ModelResponse modelReponse = facade.Read(new Product() {Id = id});
             return View(modelReponse.Domain);
         }
 
@@ -51,7 +51,7 @@ namespace Supplements.Controllers
         public ActionResult Delete(int id)
         {
             Facade.Facade facade = new Facade.Facade();
-            ModelResponse modelReponse = facade.Delete(new Product() { id = id });
+            ModelResponse modelReponse = facade.Delete(new Product() { Id = id });
             return Json(modelReponse);
         }
     }

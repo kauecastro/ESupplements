@@ -12,9 +12,9 @@
              @foreach(Supplements.Models.Product product in Model)
              {
                  <tr>
-                     <td>@product.sku</td>
-                     <td>@Html.ActionLink(@product.name, "Vizualize", new { id = product.id })</td>
-                     <td>@product.quantityStock</td>
+                     <td>@product.SKU</td>
+                     <td>@Html.ActionLink(@product.Name, "Vizualize", new { id = product.Id })</td>
+                     <td>@product.QuantityStock</td>
                  </tr>                
              }
          </tbody>
