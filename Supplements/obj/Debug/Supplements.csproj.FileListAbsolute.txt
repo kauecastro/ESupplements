@@ -30,5 +30,6 @@ D:\Projects\ESupplements\Supplements\bin\EntityFramework.dll
 D:\Projects\ESupplements\Supplements\bin\EntityFramework.SqlServer.dll
 D:\Projects\ESupplements\Supplements\bin\EntityFramework.xml
 D:\Projects\ESupplements\Supplements\bin\EntityFramework.SqlServer.xml
-D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.Migrations.CreateProducts.resources
+D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.Migrations.FirstThings.resources
 D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.csproj.GenerateResource.Cache
+D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.Migrations.Orders.resources

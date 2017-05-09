@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Css\app.css" />
+    <Content Include="Content\Css\appShowcase.css" />
     <Content Include="Content\Css\bootstrap.css" />
     <Content Include="Content\Css\flexslider.css" />
     <Content Include="Content\Images\1.jpg" />
@@ -156,32 +157,40 @@
     <Content Include="Scripts\js\imagezoom.js" />
     <Content Include="Scripts\js\jquery.flexslider.js" />
     <Content Include="Scripts\js\npm.js" />
+    <Content Include="Scripts\js\responsiveslides.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ShowcaseController.cs" />
     <Compile Include="Controllers\SingleProductController.cs" />
     <Compile Include="DAO\AbstractDAO.cs" />
     <Compile Include="DAO\EntityContext.cs" />
     <Compile Include="DAO\IDAO.cs" />
-    <Compile Include="DAO\ProductsDAO.cs" />
+    <Compile Include="DAO\ClientDAO.cs" />
+    <Compile Include="DAO\ProductDAO.cs" />
     <Compile Include="DAO\UserAccountDAO.cs" />
     <Compile Include="Facade\Facade.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705020443037_CreateProducts.cs" />
-    <Compile Include="Migrations\201705020443037_CreateProducts.Designer.cs">
-      <DependentUpon>201705020443037_CreateProducts.cs</DependentUpon>
+    <Compile Include="Migrations\201705072328582_FirstThings.cs" />
+    <Compile Include="Migrations\201705072328582_FirstThings.Designer.cs">
+      <DependentUpon>201705072328582_FirstThings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705082328024_Orders.cs" />
+    <Compile Include="Migrations\201705082328024_Orders.Designer.cs">
+      <DependentUpon>201705082328024_Orders.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
-    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Industry.cs" />
     <Compile Include="Models\ModelDomain.cs" />
@@ -195,6 +204,8 @@
     <Compile Include="Strategy\IStrategy.cs" />
     <Compile Include="Strategy\CreateProducts.cs" />
     <Compile Include="Strategy\ReadProducts.cs" />
+    <Compile Include="Strategy\ReadUserAccountStrategy.cs" />
+    <Compile Include="Strategy\TryGetUserStrategy.cs" />
     <Compile Include="Strategy\UpdateProductsStrategy.cs" />
     <Compile Include="Strategy\ValidateLoginFieldsStrategy.cs" />
     <Compile Include="Strategy\ValidateProductsFieldsStrategy.cs" />
@@ -202,7 +213,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="ClassDiagram1.cd" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -211,6 +221,7 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Vizualize.cshtml" />
     <Content Include="Views\SingleProduct\Index.cshtml" />
+    <Content Include="Views\Authentication\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -222,8 +233,11 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705020443037_CreateProducts.resx">
-      <DependentUpon>201705020443037_CreateProducts.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705072328582_FirstThings.resx">
+      <DependentUpon>201705072328582_FirstThings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705082328024_Orders.resx">
+      <DependentUpon>201705082328024_Orders.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

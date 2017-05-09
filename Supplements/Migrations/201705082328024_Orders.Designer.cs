@@ -7,13 +7,13 @@ namespace Supplements.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class CreateProducts : IMigrationMetadata
+    public sealed partial class Orders : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateProducts));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Orders));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705020443037_CreateProducts"; }
+            get { return "201705082328024_Orders"; }
         }
         
         string IMigrationMetadata.Source

@@ -14,11 +14,11 @@ namespace Supplements.Strategy
                 logical = false,
                 text = "There empty fields !"
             };
-            Person person = new Person(); 
+            UserAccount userAccount = new UserAccount(); 
             if(modelDomain != null)
-                person = (Person)modelDomain;
-            if (string.IsNullOrEmpty(person.userAccount.userName) ||
-                string.IsNullOrEmpty(person.userAccount.password))
+                userAccount = (UserAccount)modelDomain;
+            if (string.IsNullOrEmpty(userAccount.UserName) ||
+                string.IsNullOrEmpty(userAccount.Password))
                 return ModelResponse;
 
             ModelResponse.logical = true;

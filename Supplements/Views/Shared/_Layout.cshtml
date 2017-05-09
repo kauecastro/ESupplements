@@ -4,13 +4,14 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="~/Content/Css/bootstrap.css" />
-
-        <link href="~/Content/Css/app.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/Content/Css/bootstrap.css" />     
+        <link rel="stylesheet" href="~/Content/Css/flexslider.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="~/Content/Css/app.css" />
         <!--fonts-->
         <link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'><!--//fonts-->
         <!--Scripts-->
+        <script defer src="~/Scripts/js/jquery.flexslider.js"></script>
         <script src="~/Scripts/jquery-1.10.2.js"></script>
         <script src="~/Scripts/js/bootstrap.js"></script>
         <script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
@@ -34,7 +35,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="#">Contato</a></li>
-                            <li class="btn-logar"><a href="#">Login</a></li>
+                            <li class="btn-logar">@Html.ActionLink("Login","Index","Authentication")</li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Supplements.DAO
 {
-    public class ProductsDAO : AbstractDAO, IDAO
+    public class ProductDAO : AbstractDAO, IDAO
     {
         #region .: Products CRUD :. 
         public ModelResponse Create(ModelDomain ModelDomain)
@@ -34,16 +34,22 @@ namespace Supplements.DAO
         }
 
         public ModelResponse Read(Models.ModelDomain ModelDomain)
-        {
+      {
             Product product = (Product)ModelDomain;
             ModelResponse response = new ModelResponse() { Domain = new List<ModelDomain>() };    
             try
             {
-
-                var products = from p in context.Products select p;
+                using (var context = new EntityContext())
+                {
+                    var products = from p in context.Products select p;
+                    
+                    //Filters
                     if (product.Id > 0)
                         products = products.Where(q => q.Id == product.Id);
-                    foreach(var p in products)
+                    if (product.SKU != null && !string.IsNullOrEmpty(product.SKU))
+                        products = products.Where(q => q.SKU == product.SKU);
+                    
+                    foreach (var p in products)
                     {
                         response.Domain.Add(new Product()
                         {
@@ -57,7 +63,7 @@ namespace Supplements.DAO
                             SKU = p.SKU,
                         });
                     }
-                
+                }
                 response.text = "OK!";
                 response.logical = true;
             }

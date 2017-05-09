@@ -11,7 +11,7 @@ namespace Supplements.Strategy
     {
         public ModelResponse Process(ModelDomain modelDomain)
         {
-            ProductsDAO productsDAO = new ProductsDAO();
+            ProductDAO productsDAO = new ProductDAO();
             return productsDAO.Delete(modelDomain);
         }
     }

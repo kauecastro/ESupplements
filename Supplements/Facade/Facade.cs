@@ -15,18 +15,33 @@ namespace Supplements.Facade
         {
             #region .: Strategy constructors :.
             List<IStrategy> Strategies = new List<IStrategy>();
+            #region .: Products Strategies:.
             Strategies.Add(new ValidateProductsFieldsStrategy());
             Strategies.Add(new CreateProducts());
             StrategyDictionary.Add(new Product().GetType().Name.ToString() + "Create", Strategies);
+            
             Strategies = new List<IStrategy>();
             Strategies.Add(new ReadProducts());
             StrategyDictionary.Add(new Product().GetType().Name.ToString() + "Read", Strategies);
+            
             Strategies = new List<IStrategy>();
             Strategies.Add(new UpdateProductsStrategy());
             StrategyDictionary.Add(new Product().GetType().Name.ToString() + "Update", Strategies);
+            
             Strategies = new List<IStrategy>();
             Strategies.Add(new DeleteProductsStrategy());
             StrategyDictionary.Add(new Product().GetType().Name.ToString() + "Delete", Strategies);
+            #endregion
+
+            #region .:Authentication:.
+
+            Strategies = new List<IStrategy>();
+            Strategies.Add(new ValidateLoginFieldsStrategy());
+            Strategies.Add(new ReadUserAccountStrategy());
+            Strategies.Add(new TryGetUserStrategy());
+            StrategyDictionary.Add(new UserAccount().GetType().Name.ToString() + "Read", Strategies);
+
+            #endregion
             #endregion
         }
 

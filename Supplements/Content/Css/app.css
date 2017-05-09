@@ -2962,4 +2962,10 @@ a.item_add p.number {
 .productSKU {
     font-size:12px;
 }
+.container {
+    height:100%;
 }
+}
+
+
+

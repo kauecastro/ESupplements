@@ -1,9 +1,8 @@
-﻿ <!-- slide -->
-<!-- FlexSlider -->
-<script defer src="~/Scripts/js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="~/Content/Css/flexslider.css" type="text/css" media="screen" />
-<link rel="stylesheet" href="~/Content/Css/app.css" />
+﻿@model List<Supplements.Models.ModelDomain>
+
 <!-- grow -->
+@foreach(Supplements.Models.Product product in Model)
+{
 <div class="product">
     <div class="container">
         <div class="product-price1">
@@ -25,23 +24,23 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="clearfix"> </div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
             <div class="col-md-5 single-top-in simpleCart_shelfItem">
                 <div class="single-para ">
-                    <h4>Whey Protein 3W - Max Titanium</h4>
+                    <h4>@product.Name</h4>
                     <div class="star-on">
                         <div class="review">
                             <a href="#"> 1 customer review </a>
                         </div>
-                        <span class="productSKU">SKU: 293212399</span>
+                        <span class="productSKU">SKU: @product.SKU</span>
                         <div class="clearfix"> </div>
                     </div>
 
-                    <h5 class="item_price">R$ 120,00</h5>
+                    <h5 class="item_price">R$ @product.Price</h5>
                     <p>
-                        Proteína a base do soro do leite.
+                        A produtc description example.
                     </p>
                     
                     <a href="#" class="add-cart item_add">COMPRAR</a>
@@ -51,6 +50,7 @@
         </div>
     </div>
 </div>
+}
 <script>
     // Can also be used with $(document).ready()
     $(document).ready(function () {

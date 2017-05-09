@@ -4,12 +4,11 @@ using System.Linq;
 using System.Web;
 using MySql.Data.MySqlClient;
 using Supplements.Models;
-
+using System.Configuration;
 namespace Supplements.DAO
 {
     public abstract class AbstractDAO 
     {
-        public MySqlConnection conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["MysqlConnection"].ConnectionString);
-        public EntityContext context = new EntityContext();
+       
     }
 }

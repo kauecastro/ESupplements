@@ -7,10 +7,10 @@ namespace Supplements.Models
 {
     public class Person : ModelDomain
     {
-        public int id { get; set; }
-        public string nome { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
         public string CPF { get; set; }
-        public Address address { get; set; }
-        public UserAccount userAccount { get; set; }
+        public Address Address { get; set; }
+        public UserAccount UserAccount { get; set; }
     }
 }
