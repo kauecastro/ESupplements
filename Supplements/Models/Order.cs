@@ -5,11 +5,12 @@ using System.Web;
 
 namespace Supplements.Models
 {
-    public class Order
+    public class Order : ModelDomain
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public List<Product> product { get; set; }
-        public string Status { get; set; }
+        public StatusOrder StatusOrder { get; set; }
+        public Client Client { get; set; }
         public double totalPrice { get; set; }
     }
 }

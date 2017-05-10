@@ -5,8 +5,9 @@ using System.Web;
 
 namespace Supplements.Models
 {
-    public class Client : Person
+    public class StatusOrder : ModelDomain
     {
-
+        public int Id { get; set; }
+        public string Description { get; set; }
     }
 }

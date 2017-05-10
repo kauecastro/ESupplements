@@ -33,3 +33,5 @@ D:\Projects\ESupplements\Supplements\bin\EntityFramework.SqlServer.xml
 D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.Migrations.FirstThings.resources
 D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.csproj.GenerateResource.Cache
 D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.Migrations.Orders.resources
+D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.Migrations.OrdersUpdates.resources
+D:\Projects\ESupplements\Supplements\obj\Debug\Supplements.Migrations.OrdersUpdates2.resources

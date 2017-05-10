@@ -172,6 +172,7 @@
     <Compile Include="DAO\EntityContext.cs" />
     <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DAO\ClientDAO.cs" />
+    <Compile Include="DAO\OrderDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
     <Compile Include="DAO\UserAccountDAO.cs" />
     <Compile Include="Facade\Facade.cs" />
@@ -186,6 +187,14 @@
     <Compile Include="Migrations\201705082328024_Orders.Designer.cs">
       <DependentUpon>201705082328024_Orders.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705100503450_OrdersUpdates.cs" />
+    <Compile Include="Migrations\201705100503450_OrdersUpdates.Designer.cs">
+      <DependentUpon>201705100503450_OrdersUpdates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705100517545_OrdersUpdates2.cs" />
+    <Compile Include="Migrations\201705100517545_OrdersUpdates2.Designer.cs">
+      <DependentUpon>201705100517545_OrdersUpdates2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Order.cs" />
@@ -197,6 +206,7 @@
     <Compile Include="Models\ModelResponse.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\StatusOrder.cs" />
     <Compile Include="Models\Supplements.cs" />
     <Compile Include="Models\UserAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -238,6 +248,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705082328024_Orders.resx">
       <DependentUpon>201705082328024_Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705100503450_OrdersUpdates.resx">
+      <DependentUpon>201705100503450_OrdersUpdates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705100517545_OrdersUpdates2.resx">
+      <DependentUpon>201705100517545_OrdersUpdates2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
