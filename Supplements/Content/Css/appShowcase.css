@@ -150,12 +150,12 @@ ul.dc_pagination li a {
 .showcase {
     width : 100%;
 }
-
+     
 .showcase-toolbar {
     background-color:#333;
 }
 
-.container {
+.container.render-body {
     width : 100%;
     padding-left: 0;
     padding-right:0;

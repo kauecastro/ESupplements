@@ -1,5 +1,8 @@
 ﻿<!DOCTYPE html>
-
+@{
+    
+    var orderCart = (Supplements.Models.Order)Session["OrderCart"];
+}
 
 <html>
     <head>
@@ -35,14 +38,49 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="#">Contato</a></li>
-                            <li class="btn-logar">@Html.ActionLink("Login","Index","Authentication")</li>
+                            @if (Session["userAuthenticationName"] != null && Session["userAuthenticationName"] != "")
+                            { 
+                                <li class="dropdown">
+                                    <a href="#" class=" dropdown-toggle" data-toggle="dropdown">@Session["userAuthenticationName"] <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Perfil</a></li>
+                                        <li><a href="#">@Url.Action("Logoff","Logoff","Showcase")</a></li>
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="btn-logar">@Html.ActionLink("Login","Index","Authentication")</li>
+                            }
+                            <li>
+                                <div class="cart box_1">
+                                    <a href="checkout.html">
+                                        <h3>
+                                            <div class="total">
+                                                <span class="simpleCart_total">
+                                                    @if (@Session["OrderCart"] != null)
+                                                    {
+                                                         <b>@string.Format("{0:c}", orderCart.totalPrice)</b>
+                                                    }
+                                                    else
+                                                    {
+                                                        <b>@string.Format("{0:c}", 0)</b>
+                                                    }
+
+                                                </span>
+                                            </div>
+                                            <img src="~/Content/images/cart.png" alt="" />
+                                        </h3>
+                                    </a>
+                                </div>
+                            </li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
         </header>    
 
-        <section class="container">@RenderBody()</section>    
+        <section class="container render-body">@RenderBody()</section>    
         
         <footer class="footer">
             <div class="footer-class">

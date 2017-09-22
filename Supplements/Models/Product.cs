@@ -12,6 +12,7 @@ namespace Supplements.Models
         public string SKU { get; set; }
         public string EAN { get; set; }
         public int QuantityStock { get; set; }
+        public int Quantity { get; set; }
         public float Active { get; set; }
         public decimal OldPrice { get; set; }
         public decimal Price { get; set; }

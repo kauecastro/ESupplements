@@ -1,0 +1,76 @@
+﻿@{
+    var orderCart = (Supplements.Models.Order)Session["OrderCart"] ?? new Supplements.Models.Order() { product = new List<Supplements.Models.Product>() }; 
+}
+<div class="container">
+    <div class="check">
+        <h1>Meu carrinho</h1>
+ 
+        <div class="col-md-9 cart-items">
+@foreach (var product in orderCart.product)
+{
+            <div class="cart-header">
+                <div class="close1"> </div>
+                <div class="cart-sec simpleCart_shelfItem">
+                    <div class="cart-item cyc">
+                        <img src="images/pic1.jpg" class="img-responsive" alt="" />
+                    </div>
+                    <div class="cart-item-info">
+                        <h3><a href="#">@product.Name</a><span>SKU: @product.SKU</span></h3>
+                        <ul class="qty">
+                            <li><p>Quantidade: @product.Quantity</p></li>
+                        </ul>
+
+                        <div class="delivery">
+                            <p>Total : @string.Format("{0:c}", (product.Quantity * product.Price))</p>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+            </div>
+}
+        </div>
+
+        <div class="col-md-3 cart-total">
+            <a class="continue" href="#">Continuar compras</a>
+            <div class="price-details">
+                <h3>Detalhes</h3>
+                <span>Total</span>
+                <span class="total1">@string.Format("{0:c}", orderCart.totalPrice)</span>
+                <span>Disconto</span>
+                <span class="total1">---</span>
+                <span>Taxa de entrega</span>
+                <span class="total1">150.00</span>
+                <div class="clearfix"></div>
+            </div>
+            <ul class="total_price">
+                <li class="last_price"> <h4>TOTAL</h4></li>
+                <li class="last_price"><span>6350.00</span></li>
+                <div class="clearfix"> </div>
+            </ul>
+
+
+            <div class="clearfix"></div>
+            <a class="order" href="#">Fazer o pedido</a>
+            <div class="total-item">
+                <h3>OPÇÕES</h3>
+                <h4>CUPONS</h4>
+                <a class="cpns" href="#">Inserir cupons</a>
+            </div>
+        </div>
+
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function (c) {
+        $('.close1').on('click', function (c) {
+            $('.cart-header').fadeOut('slow', function (c) {
+                $('.cart-header').remove();
+            });
+        });
+    });
+</script>
+

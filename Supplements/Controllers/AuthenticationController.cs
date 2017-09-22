@@ -20,11 +20,12 @@ namespace Supplements.Controllers
         {
             Facade.Facade facade = new Facade.Facade();
             ModelResponse modelReponse = facade.Read(userAccount);
-            if (modelReponse != null && modelReponse.Domain.Count > 0)
-                Session["userAuthentication"] = modelReponse.Domain;
-            var redView = modelReponse.logical ? "Index" : "Index";
-            var redRoute = modelReponse.logical ? "Showcase" : "Authentication";
-            return RedirectToAction(redView, redRoute);
+            var Person = (Person)modelReponse.Domain.FirstOrDefault();
+            if (Person == null )
+                return RedirectToAction("Index", "Authentication");
+            Session["userAuthenticationName"] = Person.Nome;
+            Session["userAuthenticationId"] = Person.Id;
+            return RedirectToAction("Index", "Showcase");
         }
 	}
 }

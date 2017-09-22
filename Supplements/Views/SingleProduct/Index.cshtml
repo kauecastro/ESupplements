@@ -3,6 +3,7 @@
 <!-- grow -->
 @foreach(Supplements.Models.Product product in Model)
 {
+    <meta name="productSKU" content="@product.SKU" />
 <div class="product">
     <div class="container">
         <div class="product-price1">
@@ -43,7 +44,7 @@
                         A produtc description example.
                     </p>
                     
-                    <a href="#" class="add-cart item_add">COMPRAR</a>
+                    <a href="#" class="add-cart item_add" >@Html.ActionLink("COMPRAR", "Buy", new { id = product.Id })</a>
                 </div>
             </div>
             <div class="clearfix"> </div>
@@ -51,12 +52,5 @@
     </div>
 </div>
 }
-<script>
-    // Can also be used with $(document).ready()
-    $(document).ready(function () {
-        $('.flexslider').flexslider({
-            animation: "slide",
-            controlNav: "thumbnails"
-        });
-    });
+<script src="~/Scripts/Views/SingleProduct.js">
 </script>

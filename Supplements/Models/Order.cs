@@ -12,5 +12,6 @@ namespace Supplements.Models
         public StatusOrder StatusOrder { get; set; }
         public Client Client { get; set; }
         public double totalPrice { get; set; }
+
     }
 }
