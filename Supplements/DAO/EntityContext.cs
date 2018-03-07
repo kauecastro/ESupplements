@@ -11,7 +11,7 @@ namespace Supplements.DAO
 {
     public class EntityContext : DbContext
     {
-        public EntityContext() : base("data source=.\\SQLEXPRESS; initial catalog=ESupplements; Integrated Security=true; user id=sa; password=Zener47kaue;") { }
+        public EntityContext() : base(" source=.\\SQLEXPRESS; initial catalog=ESupplements; Integrated Security=true; user id=sa; password=Zener47kaue;") { }
 
         public DbSet<StatusOrder> StatusOrders { get; set; }
         public DbSet<Order> Orders { get; set; }
